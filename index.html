@@ -9,12 +9,14 @@
     
   </body>
   <script>
+
     let gameAnswers = [
-      'Rock',
-      'Paper',
-      'Scissors'
+      'rock',
+      'paper',
+      'scissors'
     ]
-    const playerSelection = prompt('Select: Rock, Paper or Scissors','')
+
+    const playerSelection = prompt('Select: Rock, Paper or Scissors','').toLowerCase()
     const computerSelection = getComputerChoice();
     
     function getComputerChoice (){
