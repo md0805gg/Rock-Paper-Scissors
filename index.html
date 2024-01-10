@@ -15,9 +15,6 @@
       'paper',
       'scissors'
     ]
-
-    const playerSelection = prompt('Select: Rock, Paper or Scissors','').toLowerCase()
-    const computerSelection = getComputerChoice();
     
     function getComputerChoice (){
       let randomIndex = (Math.floor(Math.random() * gameAnswers.length));
@@ -25,7 +22,8 @@
     }
     
     function playRound(playerSelection,computerSelection){
- 
+      const playerSelection = prompt('Select: Rock, Paper or Scissors','').toLowerCase()
+      const computerSelection = getComputerChoice();
 
     }
 
