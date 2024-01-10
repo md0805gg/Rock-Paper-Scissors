@@ -14,6 +14,8 @@
       'Paper',
       'Scissors'
     ]
+    const playerSelection = prompt('Select: Rock, Paper or Scissors','')
+    const computerSelection = getComputerChoice();
     
     function getComputerChoice (computerArray){
       computerArray = gameAnswers;
@@ -22,8 +24,8 @@
     }
     
     function playRound(playerSelection,computerSelection){
-      playerSelection = prompt('Select: Rock, Paper or Scissors','')
-      
+ 
+
     }
 
   </script>
@@ -35,5 +37,36 @@ My questions  / thoughts:
 2. try to understand order in which above function would be run
 3. try to understand best scope choice
 4. variable inside or outside of the function?
+
+Rock beats scissors
+Scissors beat paper
+Paper beats Rock
+
+scissors 
+
+x2 because of the other way around
+
+tie
+r r
+s s
+p p
+
+you win:
+p:r
+
+r:r
+r:p
+r:s
+p:r
+p:p
+p:s
+s:r
+s:p
+s:s
+
+
+w: r:s, p:r, s:p
+l: r:p, p:s, s:r
+t: r:r, p:p, s:s
 
 -->
