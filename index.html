@@ -17,10 +17,9 @@
     const playerSelection = prompt('Select: Rock, Paper or Scissors','')
     const computerSelection = getComputerChoice();
     
-    function getComputerChoice (computerArray){
-      computerArray = gameAnswers;
-      let randomIndex = (Math.floor(Math.random() * computerArray.length));
-      return computerArray[randomIndex]
+    function getComputerChoice (){
+      let randomIndex = (Math.floor(Math.random() * gameAnswers.length));
+      return gameAnswers[randomIndex]
     }
     
     function playRound(playerSelection,computerSelection){
