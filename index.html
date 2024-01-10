@@ -24,9 +24,23 @@
     function playRound(playerSelection,computerSelection){
       playerSelection = prompt('Select: Rock, Paper or Scissors','').toLowerCase()
       computerSelection = getComputerChoice();
-
+      if (
+        (playerSelection === 'rock' && computerSelection === 'scissors') ||
+        (playerSelection === 'paper' && computerSelection === 'rock') ||
+        (playerSelection === 'scissors' && computerSelection === 'paper')
+          ){
+            return `You won! ${playerSelection} beats ${computerSelection}!`
+          } else if (
+            (playerSelection === 'rock' && computerSelection === 'paper') ||
+            (playerSelection === 'paper' && computerSelection === 'scissors') ||
+            (playerSelection === 'scissors' && computerSelection === 'rock') 
+          ){
+            return `You lose! ${computerSelection} beats ${playerSelection}!`
+          } else {
+            return `It\'s a tie! ${playerSelection} against ${computerSelection}!`
+          }
     }
-
+    //remember to capitalise first letter of return
   </script>
 </html>
 
