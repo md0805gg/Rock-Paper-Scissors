@@ -16,12 +16,14 @@
     ]
     
     function getComputerChoice (computerArray){
+      computerArray = gameAnswers;
       let randomIndex = (Math.floor(Math.random() * computerArray.length));
       return computerArray[randomIndex]
     }
     
     function playRound(playerSelection,computerSelection){
       playerSelection = prompt('Select: Rock, Paper or Scissors','')
+      
     }
 
   </script>
