@@ -9,7 +9,17 @@
     
   </body>
   <script>
-  
+    let gameAnswers = [
+      'Rock',
+      'Paper',
+      'Scissors'
+    ]
+    
+    function getComputerChoice (computerArray){
+      let randomIndex = (Math.floor(Math.random() * computerArray.length));
+      return computerArray[randomIndex]
+    }
+
   </script>
 </html>
 
