@@ -22,25 +22,32 @@
     }
     
     function playRound(playerSelection,computerSelection){
-      playerSelection = prompt('Select: Rock, Paper or Scissors','').toLowerCase()
+      playerSelection = prompt('Select: Rock, Paper or Scissors','').toLowerCase();
       computerSelection = getComputerChoice();
+      let playerSelectionCapitalized = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1);
+      let computerSelectionCapitalized = computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1);
+      console.log(playerSelection);
+      console.log(computerSelection);
+      console.log(playerSelectionCapitalized);
+      console.log(computerSelectionCapitalized);
       if (
         (playerSelection === 'rock' && computerSelection === 'scissors') ||
         (playerSelection === 'paper' && computerSelection === 'rock') ||
         (playerSelection === 'scissors' && computerSelection === 'paper')
           ){
-            return `You won! ${playerSelection} beats ${computerSelection}!`
+            return `You won! ${playerSelectionCapitalized} beats ${computerSelectionCapitalized}!`
           } else if (
             (playerSelection === 'rock' && computerSelection === 'paper') ||
             (playerSelection === 'paper' && computerSelection === 'scissors') ||
             (playerSelection === 'scissors' && computerSelection === 'rock') 
           ){
-            return `You lose! ${computerSelection} beats ${playerSelection}!`
+            return `You lose! ${computerSelectionCapitalized} beats ${playerSelectionCapitalized}!`
           } else {
-            return `It\'s a tie! ${playerSelection} against ${computerSelection}!`
+            return `It\'s a tie! ${playerSelectionCapitalized} against ${computerSelectionCapitalized}!`
           }
     }
     //remember to capitalise first letter of return
+    //What if player puts something else than rock, paper or scissors?
   </script>
 </html>
 
@@ -81,5 +88,13 @@ s:s
 w: r:s, p:r, s:p
 l: r:p, p:s, s:r
 t: r:r, p:p, s:s
+
+function playRound(playerSelection, computerSelection) {
+  // your code here!
+}
+ 
+const playerSelection = "rock";
+const computerSelection = getComputerChoice();
+console.log(playRound(playerSelection, computerSelection));
 
 -->
