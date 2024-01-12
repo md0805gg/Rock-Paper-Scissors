@@ -16,6 +16,9 @@
       'scissors'
     ]
     
+    let playerScore;
+    let computerScore;
+
     function getComputerChoice (){
       let randomIndex = (Math.floor(Math.random() * gameAnswers.length));
       return gameAnswers[randomIndex]
@@ -26,8 +29,16 @@
       computerSelection = getComputerChoice();
       let playerSelectionCapitalized = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1);
       let computerSelectionCapitalized = computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1);
-      let playerScore;
-      let computerScore;
+
+      if ((playerScore === undefined || playerScore === 0) &&
+          (computerScore === undefined || computerScore === 0)
+      ) {
+        playerScore = 0;
+        computerScore = 0;
+      } 
+      console.log(playerScore);
+      console.log(computerScore);
+
       if (
         (playerSelection === 'rock' && computerSelection === 'scissors') ||
         (playerSelection === 'paper' && computerSelection === 'rock') ||
