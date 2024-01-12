@@ -26,6 +26,12 @@
     
     function playRound(playerSelection,computerSelection){
       playerSelection = prompt('Select: Rock, Paper or Scissors','').toLowerCase();
+
+      if (playerSelection !== 'rock' && playerSelection !== 'scissors' && playerSelection !== 'paper') {
+        alert('Sorry, but it has to be either "Rock", "Paper" or "Scissors"! Please provide your answer once again.');
+        playRound();
+      }
+
       computerSelection = getComputerChoice();
       let playerSelectionCapitalized = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1);
       let computerSelectionCapitalized = computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1);
