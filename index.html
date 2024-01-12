@@ -26,31 +26,34 @@
       computerSelection = getComputerChoice();
       let playerSelectionCapitalized = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1);
       let computerSelectionCapitalized = computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1);
+      let playerScore;
+      let computerScore;
       if (
         (playerSelection === 'rock' && computerSelection === 'scissors') ||
         (playerSelection === 'paper' && computerSelection === 'rock') ||
         (playerSelection === 'scissors' && computerSelection === 'paper')
           ){
-            console.log(`You won! ${playerSelectionCapitalized} beats ${computerSelectionCapitalized}!`)
+            playerScore++;
+            console.log(`You won! ${playerSelectionCapitalized} beats ${computerSelectionCapitalized}! Current score: Player:${playerScore} Computer: ${computerScore}`)
           } else if (
             (playerSelection === 'rock' && computerSelection === 'paper') ||
             (playerSelection === 'paper' && computerSelection === 'scissors') ||
             (playerSelection === 'scissors' && computerSelection === 'rock') 
           ){
-            console.log(`You lose! ${computerSelectionCapitalized} beats ${playerSelectionCapitalized}!`)
+            computerScore++;
+            console.log(`You lose! ${computerSelectionCapitalized} beats ${playerSelectionCapitalized}! Current score: Player:${playerScore} Computer: ${computerScore}`)
           } else {
-            console.log(`It\'s a tie! ${playerSelectionCapitalized} against ${computerSelectionCapitalized}!`)
+            playerScore++;
+            computerScore++;
+            console.log(`It\'s a tie! ${playerSelectionCapitalized} against ${computerSelectionCapitalized}! Current score: Player:${playerScore} Computer: ${computerScore}`)
           }
     }
 
     function game() {
       console.log('welcome msg');
-      let playerScore = 0;
-      let computerScore = 0;
-      playRound();
-     // for (initialization,condition,afterthought) {
-     //   playRound();
-     // }
+      //for (;;afterthought) {
+       //playRound();
+      //}
     }
 
     //Required improvements:
