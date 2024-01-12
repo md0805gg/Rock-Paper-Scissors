@@ -31,27 +31,41 @@
         (playerSelection === 'paper' && computerSelection === 'rock') ||
         (playerSelection === 'scissors' && computerSelection === 'paper')
           ){
-            return `You won! ${playerSelectionCapitalized} beats ${computerSelectionCapitalized}!`
+            console.log(`You won! ${playerSelectionCapitalized} beats ${computerSelectionCapitalized}!`)
           } else if (
             (playerSelection === 'rock' && computerSelection === 'paper') ||
             (playerSelection === 'paper' && computerSelection === 'scissors') ||
             (playerSelection === 'scissors' && computerSelection === 'rock') 
           ){
-            return `You lose! ${computerSelectionCapitalized} beats ${playerSelectionCapitalized}!`
+            console.log(`You lose! ${computerSelectionCapitalized} beats ${playerSelectionCapitalized}!`)
           } else {
-            return `It\'s a tie! ${playerSelectionCapitalized} against ${computerSelectionCapitalized}!`
+            console.log(`It\'s a tie! ${playerSelectionCapitalized} against ${computerSelectionCapitalized}!`)
           }
     }
 
     function game() {
-      for (initialization,condition,afterthought) {
-        //function
-      }
+      console.log('welcome msg');
+      let playerScore = 0;
+      let computerScore = 0;
+      playRound();
+     // for (initialization,condition,afterthought) {
+     //   playRound();
+     // }
     }
 
     //Required improvements:
     //remember to capitalise first letter of return
     //What if player puts something else than rock, paper or scissors?
+    //make gameAnswers local to the getComputerChoice function
+
+    //Design of the game function:
+    // at the beginning of the game, console.log some kind of introduction
+    // add two function variables: playerScore and Computer score initailized at 0
+    //loop another function, that adds 1 to player of computer score, until one of the two reaches 5; take TIE into consideration
+    //report a winner
+    //ask the player if you want to play another game, possible answers: y,n
+    //n - console log something
+    //y - reset the counter and play another round
   </script>
 </html>
 
