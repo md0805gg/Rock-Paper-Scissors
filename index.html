@@ -24,14 +24,14 @@
     }
     
     function playRound(playerSelection,computerSelection){
-      playerSelection = prompt('Select: Rock, Paper or Scissors','').toLowerCase();
+     // playerSelection = prompt('Select: Rock, Paper or Scissors','').toLowerCase();
 
       if (playerSelection !== 'rock' && playerSelection !== 'scissors' && playerSelection !== 'paper') {
         alert('Sorry, but it has to be either "Rock", "Paper" or "Scissors"! Please provide your answer once again.');
-        playRound();
+        playerSelection;
       } else {
 
-        computerSelection = getComputerChoice();
+       // computerSelection = getComputerChoice();
         let playerSelectionCapitalized = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1);
         let computerSelectionCapitalized = computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1);
 
@@ -67,7 +67,7 @@
     function game() {
       console.log('welcome msg');
       for (;;) {
-       playRound();
+       playRound(prompt('Select: Rock, Paper or Scissors',''),getComputerChoice());
        if ((((playerScore >= 5) || (computerScore >= 5)) && (playerScore === computerScore))) {
         console.log ('Game\'s over. It\'s a tie! Both you and Computer won. Contratulations to you both.');
         break;
