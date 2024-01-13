@@ -22,7 +22,16 @@
       let randomIndex = (Math.floor(Math.random() * gameAnswers.length));
       return gameAnswers[randomIndex]
     }
-    
+
+    function getPlayerChoice() {
+     let string = prompt('Select: Rock, Paper or Scissors','');
+     if (string === null) {
+      string
+     } else {
+      return string.toLowerCase();
+     }
+    }
+   
     function playRound(playerSelection,computerSelection){
       if (playerSelection !== 'rock' && playerSelection !== 'scissors' && playerSelection !== 'paper') {
         alert('Sorry, but it has to be either "Rock", "Paper" or "Scissors"! Please provide your answer once again.');
@@ -36,7 +45,7 @@
           playerScore = 0;
           computerScore = 0;
         } 
-        
+
         if (
           (playerSelection === 'rock' && computerSelection === 'scissors') ||
           (playerSelection === 'paper' && computerSelection === 'rock') ||
@@ -62,7 +71,7 @@
     function game() {
       console.log('welcome msg');
       for (;;) {
-       playRound(prompt('Select: Rock, Paper or Scissors',''),getComputerChoice());
+       playRound(getPlayerChoice(),getComputerChoice());
        if ((((playerScore >= 5) || (computerScore >= 5)) && (playerScore === computerScore))) {
         console.log ('Game\'s over. It\'s a tie! Both you and Computer won. Contratulations to you both.');
         break;
@@ -79,6 +88,7 @@
   }
 
     //Required improvements:
+    // PROVIDE A WAY TO EXIT THE WINDOW IF THE ANSWER IS NULL
     // DONE: FIX IF STATEMENT FOR WRONG ANSWER; RE-READ 'AND' AND 'OR' INFO, AS I DONT FUKEN REMEMBER ANYTHING ABOUT IT LOL
     // DONE: remember to capitalise first letter of return
     // DONE: What if player puts something else than rock, paper or scissors?
