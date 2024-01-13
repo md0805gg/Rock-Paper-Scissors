@@ -24,24 +24,19 @@
     }
     
     function playRound(playerSelection,computerSelection){
-     // playerSelection = prompt('Select: Rock, Paper or Scissors','').toLowerCase();
-
       if (playerSelection !== 'rock' && playerSelection !== 'scissors' && playerSelection !== 'paper') {
         alert('Sorry, but it has to be either "Rock", "Paper" or "Scissors"! Please provide your answer once again.');
         playerSelection;
       } else {
-
-       // computerSelection = getComputerChoice();
         let playerSelectionCapitalized = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1);
         let computerSelectionCapitalized = computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1);
-
         if ((playerScore === undefined || playerScore === 0) &&
             (computerScore === undefined || computerScore === 0)
         ) {
           playerScore = 0;
           computerScore = 0;
         } 
-
+        
         if (
           (playerSelection === 'rock' && computerSelection === 'scissors') ||
           (playerSelection === 'paper' && computerSelection === 'rock') ||
