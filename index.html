@@ -30,39 +30,40 @@
       if (playerSelection !== 'rock' && playerSelection !== 'scissors' && playerSelection !== 'paper') {
         alert('Sorry, but it has to be either "Rock", "Paper" or "Scissors"! Please provide your answer once again.');
         playRound();
-      }
+      } else {
 
-      computerSelection = getComputerChoice();
-      let playerSelectionCapitalized = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1);
-      let computerSelectionCapitalized = computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1);
+        computerSelection = getComputerChoice();
+        let playerSelectionCapitalized = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1);
+        let computerSelectionCapitalized = computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1);
 
-      if ((playerScore === undefined || playerScore === 0) &&
-          (computerScore === undefined || computerScore === 0)
-      ) {
-        playerScore = 0;
-        computerScore = 0;
-      } 
-      console.log(playerScore);
-      console.log(computerScore);
+        if ((playerScore === undefined || playerScore === 0) &&
+            (computerScore === undefined || computerScore === 0)
+        ) {
+          playerScore = 0;
+          computerScore = 0;
+        } 
+        console.log(playerScore);
+        console.log(computerScore);
 
-      if (
-        (playerSelection === 'rock' && computerSelection === 'scissors') ||
-        (playerSelection === 'paper' && computerSelection === 'rock') ||
-        (playerSelection === 'scissors' && computerSelection === 'paper')
-          ){
-            playerScore++;
-            console.log(`You won! ${playerSelectionCapitalized} beats ${computerSelectionCapitalized}! Current score: Player:${playerScore} Computer: ${computerScore}`)
-          } else if (
-            (playerSelection === 'rock' && computerSelection === 'paper') ||
-            (playerSelection === 'paper' && computerSelection === 'scissors') ||
-            (playerSelection === 'scissors' && computerSelection === 'rock') 
-          ){
-            computerScore++;
-            console.log(`You lose! ${computerSelectionCapitalized} beats ${playerSelectionCapitalized}! Current score: Player:${playerScore} Computer: ${computerScore}`)
-          } else {
-            playerScore++;
-            computerScore++;
-            console.log(`It\'s a tie! ${playerSelectionCapitalized} against ${computerSelectionCapitalized}! Current score: Player:${playerScore} Computer: ${computerScore}`)
+        if (
+          (playerSelection === 'rock' && computerSelection === 'scissors') ||
+          (playerSelection === 'paper' && computerSelection === 'rock') ||
+          (playerSelection === 'scissors' && computerSelection === 'paper')
+            ){
+              playerScore++;
+              console.log(`You won! ${playerSelectionCapitalized} beats ${computerSelectionCapitalized}! Current score: Player:${playerScore} Computer: ${computerScore}`)
+            } else if (
+              (playerSelection === 'rock' && computerSelection === 'paper') ||
+              (playerSelection === 'paper' && computerSelection === 'scissors') ||
+              (playerSelection === 'scissors' && computerSelection === 'rock') 
+            ){
+              computerScore++;
+              console.log(`You lose! ${computerSelectionCapitalized} beats ${playerSelectionCapitalized}! Current score: Player:${playerScore} Computer: ${computerScore}`)
+            } else {
+              playerScore++;
+              computerScore++;
+              console.log(`It\'s a tie! ${playerSelectionCapitalized} against ${computerSelectionCapitalized}! Current score: Player:${playerScore} Computer: ${computerScore}`)
+            }
           }
     }
 
