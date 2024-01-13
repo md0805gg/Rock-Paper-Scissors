@@ -9,17 +9,16 @@
     
   </body>
   <script>
-
-    let gameAnswers = [
-      'rock',
-      'paper',
-      'scissors'
-    ]
     
     let playerScore;
     let computerScore;
 
     function getComputerChoice (){
+      let gameAnswers = [
+      'rock',
+      'paper',
+      'scissors'
+    ]
       let randomIndex = (Math.floor(Math.random() * gameAnswers.length));
       return gameAnswers[randomIndex]
     }
@@ -87,10 +86,10 @@
   }
 
     //Required improvements:
-    // FIX IF STATEMENT FOR WRONG ANSWER; RE-READ 'AND' AND 'OR' INFO, AS I DONT FUKEN REMEMBER ANYTHING ABOUT IT LOL
-    //remember to capitalise first letter of return
-    //What if player puts something else than rock, paper or scissors?
-    //make gameAnswers local to the getComputerChoice function
+    // DONE: FIX IF STATEMENT FOR WRONG ANSWER; RE-READ 'AND' AND 'OR' INFO, AS I DONT FUKEN REMEMBER ANYTHING ABOUT IT LOL
+    // DONE: remember to capitalise first letter of return
+    // DONE: What if player puts something else than rock, paper or scissors?
+    // DONE: make gameAnswers local to the getComputerChoice function
 
     //Design of the game function:
     // at the beginning of the game, console.log some kind of introduction
