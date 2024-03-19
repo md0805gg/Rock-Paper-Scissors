@@ -6,9 +6,9 @@
     <title>Rock Paper Scissors</title>
   </head>
   <body>
-    <button>Rock</button>
-    <button>Paper</button>
-    <button>Scissors</button>
+    <button class = 'rock-button'>Rock</button>
+    <button class = 'paper-button'>Paper</button>
+    <button class = 'scissors-button'>Scissors</button>
   </body>
   <script>
     
@@ -24,6 +24,8 @@
       let randomIndex = (Math.floor(Math.random() * gameAnswers.length));
       return gameAnswers[randomIndex]
     }
+
+    addEventListener('click',)
 
     function getPlayerChoice() {
      let string = prompt('Please select: Rock, Paper or Scissors','');
