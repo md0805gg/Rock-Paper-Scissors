@@ -68,25 +68,6 @@
             }
           }
     }
-
-    function game() {
-      console.log('Hi! Let\'s play a round of \'Rock, Paper, Scissors\'');
-      for (;;) {
-       playRound(getPlayerChoice(),getComputerChoice());
-       if ((((playerScore >= 5) || (computerScore >= 5)) && (playerScore === computerScore))) {
-        console.log ('Game\'s over. It\'s a tie! Both you and Computer won. Contratulations to you both.');
-        break;
-       }       
-       else if (((playerScore >= 5) || (computerScore >= 5)) && (playerScore > computerScore)) {
-        console.log ('Game\'s over. You won! Contratulations!');
-        break;
-       }
-       else if (((playerScore >= 5) || (computerScore >= 5)) && (playerScore < computerScore)) {
-        console.log ('Game\'s over. You lost! You will get him next time!');
-        break;
-      }
-    }
-  }
-
+    
   </script>
 </html>
