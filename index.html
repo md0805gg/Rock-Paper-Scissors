@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
   </head>
-  <body>
+  <body class = 'dashboard'>
     <button class = 'rock-button'>Rock</button>
     <button class = 'paper-button'>Paper</button>
     <button class = 'scissors-button'>Scissors</button>
@@ -14,6 +14,7 @@
     
     let playerScore;
     let computerScore;
+    const dashboard = document.querySelector('.dashboard');
 
     function getComputerChoice (){
       let gameAnswers = [
@@ -25,7 +26,21 @@
       return gameAnswers[randomIndex]
     }
 
-    addEventListener('click',)
+    dashboard.addEventListener('click', (event) => {
+      let target = event.target;
+      switch(target.className){
+        case 'rock-button':
+          alert('rock');
+          break;
+        case 'paper-button':
+          alert('paper');
+          break;
+        case 'scissors-button':
+          alert('scissors');
+          break;
+      }
+    });
+    
 
     function getPlayerChoice() {
      let string = prompt('Please select: Rock, Paper or Scissors','');
