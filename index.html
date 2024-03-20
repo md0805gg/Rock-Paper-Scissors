@@ -49,28 +49,56 @@
     });
    
     function playRound(playerSelection,computerSelection){
-        if (
-          (playerSelection === 'rock' && computerSelection === 'scissors') ||
-          (playerSelection === 'paper' && computerSelection === 'rock') ||
-          (playerSelection === 'scissors' && computerSelection === 'paper')
-            ){
-              playerScore++;
-              status.textContent = `You won! ${playerSelection} beats ${computerSelection}!`;
-              score.textContent = `Player: ${playerScore} Computer: ${computerScore}`
-            } else if (
-              (playerSelection === 'rock' && computerSelection === 'paper') ||
-              (playerSelection === 'paper' && computerSelection === 'scissors') ||
-              (playerSelection === 'scissors' && computerSelection === 'rock') 
-            ){
-              computerScore++;
-              status.textContent = `You lose! ${computerSelection} beats ${playerSelection}!`;
-              score.textContent = `Player: ${playerScore} Computer: ${computerScore}`
-            } else {
-              playerScore++;
-              computerScore++;
-              status.textContent = `It\'s a tie! ${playerSelection} against ${computerSelection}!`;
-              score.textContent = `Player: ${playerScore} Computer: ${computerScore}`
-            }
-          }
+      if (
+      (playerSelection === 'rock' && computerSelection === 'scissors') ||
+      (playerSelection === 'paper' && computerSelection === 'rock') ||
+      (playerSelection === 'scissors' && computerSelection === 'paper')
+        ){
+          playerScore++;
+          status.textContent = `You won! ${playerSelection} beats ${computerSelection}!`;
+          score.textContent = `Player: ${playerScore} Computer: ${computerScore}`
+          
+        } else if (
+          (playerSelection === 'rock' && computerSelection === 'paper') ||
+          (playerSelection === 'paper' && computerSelection === 'scissors') ||
+          (playerSelection === 'scissors' && computerSelection === 'rock') 
+        ){
+          computerScore++;
+          status.textContent = `You lose! ${computerSelection} beats ${playerSelection}!`;
+          score.textContent = `Player: ${playerScore} Computer: ${computerScore}`
+        } else {
+          playerScore++;
+          computerScore++;
+          status.textContent = `It\'s a tie! ${playerSelection} against ${computerSelection}!`;
+          score.textContent = `Player: ${playerScore} Computer: ${computerScore}`
+        }
+        checkScore();
+    }
+    
+    function checkScore() {
+      if (((playerScore >= 5) || (computerScore >= 5)) && (playerScore === computerScore)) {
+        alert ('Game\'s over. It\'s a tie! Both you and Computer won. Contratulations to you both.');
+        clearScore();
+       }       
+       else if (((playerScore >= 5) || (computerScore >= 5)) && (playerScore > computerScore)) {
+        alert('Game\'s over. You won! Contratulations!');
+        clearScore();
+       }
+       else if (((playerScore >= 5) || (computerScore >= 5)) && (playerScore < computerScore)) {
+        alert('Game\'s over. You lost! You will get him next time!');
+        clearScore();
+       } 
+       else {
+        return;
+      }
+    }
+ 
+    function clearScore () {
+      playerScore = 0;
+      computerScore = 0;
+      status.textContent = `Another round?`;
+      score.textContent = `Player: ${playerScore} Computer: ${computerScore}`
+    }
+
   </script>
 </html>
