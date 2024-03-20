@@ -20,6 +20,8 @@
     let playerScore = 0;
     let computerScore = 0;
     const dashboard = document.querySelector('.dashboard');
+    const status = document.querySelector('.results-round-desc');
+    const score = document.querySelector('.results-score');
 
     function getComputerChoice (){
       let gameAnswers = [
@@ -53,18 +55,21 @@
           (playerSelection === 'scissors' && computerSelection === 'paper')
             ){
               playerScore++;
-              console.log(`You won! ${playerSelection} beats ${computerSelection}! Current score: Player:${playerScore} Computer: ${computerScore}`)
+              status.textContent = `You won! ${playerSelection} beats ${computerSelection}!`;
+              score.textContent = `Player: ${playerScore} Computer: ${computerScore}`
             } else if (
               (playerSelection === 'rock' && computerSelection === 'paper') ||
               (playerSelection === 'paper' && computerSelection === 'scissors') ||
               (playerSelection === 'scissors' && computerSelection === 'rock') 
             ){
               computerScore++;
-              console.log(`You lose! ${computerSelection} beats ${playerSelection}! Current score: Player:${playerScore} Computer: ${computerScore}`)
+              status.textContent = `You lose! ${computerSelection} beats ${playerSelection}!`;
+              score.textContent = `Player: ${playerScore} Computer: ${computerScore}`
             } else {
               playerScore++;
               computerScore++;
-              console.log(`It\'s a tie! ${playerSelection} against ${computerSelection}! Current score: Player:${playerScore} Computer: ${computerScore}`)
+              status.textContent = `It\'s a tie! ${playerSelection} against ${computerSelection}!`;
+              score.textContent = `Player: ${playerScore} Computer: ${computerScore}`
             }
           }
   </script>
