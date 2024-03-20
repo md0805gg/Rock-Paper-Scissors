@@ -30,63 +30,37 @@
       let target = event.target;
       switch(target.className){
         case 'rock-button':
-          alert('rock');
+          playRound('rock',getComputerChoice());
           break;
         case 'paper-button':
-          alert('paper');
+          playRound('rock',getComputerChoice());
           break;
         case 'scissors-button':
-          alert('scissors');
+          playRound('rock',getComputerChoice());
           break;
       }
     });
-    
-
-    function getPlayerChoice() {
-     let string = prompt('Please select: Rock, Paper or Scissors','');
-     if (string === null || string === undefined || string === '') {
-      alert('You didn\'t provide any answer');
-      getPlayerChoice();
-     } else {
-      return string.toLowerCase();
-     }
-    }
    
     function playRound(playerSelection,computerSelection){
-      if (playerSelection !== 'rock' && playerSelection !== 'scissors' && playerSelection !== 'paper') {
-        alert('Sorry, but it has to be either "Rock", "Paper" or "Scissors"! Please provide your answer once again.');
-        playerSelection;
-      } else {
-        let playerSelectionCapitalized = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1);
-        let computerSelectionCapitalized = computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1);
-        if ((playerScore === undefined || playerScore === 0) &&
-            (computerScore === undefined || computerScore === 0)
-        ) {
-          playerScore = 0;
-          computerScore = 0;
-        } 
-
         if (
           (playerSelection === 'rock' && computerSelection === 'scissors') ||
           (playerSelection === 'paper' && computerSelection === 'rock') ||
           (playerSelection === 'scissors' && computerSelection === 'paper')
             ){
               playerScore++;
-              console.log(`You won! ${playerSelectionCapitalized} beats ${computerSelectionCapitalized}! Current score: Player:${playerScore} Computer: ${computerScore}`)
+              console.log(`You won! ${playerSelection} beats ${computerSelection}! Current score: Player:${playerScore} Computer: ${computerScore}`)
             } else if (
               (playerSelection === 'rock' && computerSelection === 'paper') ||
               (playerSelection === 'paper' && computerSelection === 'scissors') ||
               (playerSelection === 'scissors' && computerSelection === 'rock') 
             ){
               computerScore++;
-              console.log(`You lose! ${computerSelectionCapitalized} beats ${playerSelectionCapitalized}! Current score: Player:${playerScore} Computer: ${computerScore}`)
+              console.log(`You lose! ${computerSelection} beats ${playerSelection}! Current score: Player:${playerScore} Computer: ${computerScore}`)
             } else {
               playerScore++;
               computerScore++;
-              console.log(`It\'s a tie! ${playerSelectionCapitalized} against ${computerSelectionCapitalized}! Current score: Player:${playerScore} Computer: ${computerScore}`)
+              console.log(`It\'s a tie! ${playerSelection} against ${computerSelection}! Current score: Player:${playerScore} Computer: ${computerScore}`)
             }
           }
-    }
-
   </script>
 </html>
