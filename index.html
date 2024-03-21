@@ -57,7 +57,6 @@
           playerScore++;
           status.textContent = `You won! ${playerSelection} beats ${computerSelection}!`;
           score.textContent = `Player: ${playerScore} Computer: ${computerScore}`
-          
         } else if (
           (playerSelection === 'rock' && computerSelection === 'paper') ||
           (playerSelection === 'paper' && computerSelection === 'scissors') ||
@@ -77,27 +76,17 @@
     
     function checkScore() {
       if (((playerScore >= 5) || (computerScore >= 5)) && (playerScore === computerScore)) {
-        alert ('Game\'s over. It\'s a tie! Both you and Computer won. Contratulations to you both.');
-        clearScore();
+        status.textContent = 'Game\'s over. It\'s a tie! Both you and Computer won. Contratulations to you both.';
        }       
        else if (((playerScore >= 5) || (computerScore >= 5)) && (playerScore > computerScore)) {
-        alert('Game\'s over. You won! Contratulations!');
-        clearScore();
+        status.textContent ='Game\'s over. You won! Contratulations!';
        }
        else if (((playerScore >= 5) || (computerScore >= 5)) && (playerScore < computerScore)) {
-        alert('Game\'s over. You lost! You will get him next time!');
-        clearScore();
+        status.textContent ='Game\'s over. You lost! You will get him next time!';
        } 
        else {
         return;
       }
-    }
- 
-    function clearScore () {
-      playerScore = 0;
-      computerScore = 0;
-      status.textContent = `Another round?`;
-      score.textContent = `Player: ${playerScore} Computer: ${computerScore}`
     }
 
   </script>
